@@ -1,0 +1,120 @@
+{
+  "n": 3,
+  "same_condition": true,
+  "warmup_discarded": true,
+  "spec_decode": false,
+  "base_url": "http://127.0.0.1:8041",
+  "model": "qwen38-nvfp4-ws",
+  "endpoint": "/v1/chat/completions",
+  "prompt": "Write a complete, production-quality Python LRU cache with per-key TTL and a pytest suite.",
+  "max_tokens": 1024,
+  "temperature": 0,
+  "seed": 0,
+  "token_source": "usage.completion_tokens / wall",
+  "ttft_source": "first streamed content delta",
+  "warmup": {
+    "completion_tokens": 1024,
+    "seconds": 15.752008448995184,
+    "wall_tok_s": 65.00758321173454,
+    "finish_reason": "length"
+  },
+  "throughput_runs": [
+    {
+      "completion_tokens": 1024,
+      "prompt_tokens": 31,
+      "total_tokens": 1055,
+      "seconds": 15.624499065001146,
+      "wall_tok_s": 65.53810114103167,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024,
+        "prompt_tokens_details": null
+      },
+      "run": 1
+    },
+    {
+      "completion_tokens": 1024,
+      "prompt_tokens": 31,
+      "total_tokens": 1055,
+      "seconds": 15.627547107011196,
+      "wall_tok_s": 65.5253184001339,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024,
+        "prompt_tokens_details": null
+      },
+      "run": 2
+    },
+    {
+      "completion_tokens": 1024,
+      "prompt_tokens": 31,
+      "total_tokens": 1055,
+      "seconds": 15.624235544994008,
+      "wall_tok_s": 65.53920651356852,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024,
+        "prompt_tokens_details": null
+      },
+      "run": 3
+    }
+  ],
+  "ttft_runs": [
+    {
+      "ttft_s": 0.053350103000411764,
+      "ttft_ms": 53.350103000411764,
+      "seconds": 15.626446508002118,
+      "sse_chunks": 1026,
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024
+      },
+      "note": "TTFT from first content delta; tokens NOT counted from SSE chunks",
+      "run": 1
+    },
+    {
+      "ttft_s": 0.05541111101047136,
+      "ttft_ms": 55.41111101047136,
+      "seconds": 15.626955259998795,
+      "sse_chunks": 1026,
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024
+      },
+      "note": "TTFT from first content delta; tokens NOT counted from SSE chunks",
+      "run": 2
+    },
+    {
+      "ttft_s": 0.052812714988249354,
+      "ttft_ms": 52.812714988249354,
+      "seconds": 15.625203331001103,
+      "sse_chunks": 1026,
+      "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 1055,
+        "completion_tokens": 1024
+      },
+      "note": "TTFT from first content delta; tokens NOT counted from SSE chunks",
+      "run": 3
+    }
+  ],
+  "median": {
+    "wall_tok_s": 65.53810114103167,
+    "completion_tokens": 1024,
+    "seconds": 15.624499065001146,
+    "ttft_ms": 53.350103000411764,
+    "ttft_s": 0.053350103000411764
+  },
+  "metrics_after": {
+    "spec_metric_lines": [],
+    "spec_metrics_absent": true
+  }
+}

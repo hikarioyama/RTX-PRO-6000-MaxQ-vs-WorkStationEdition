@@ -1,0 +1,91 @@
+{
+  "label": "synthetic official-random",
+  "dataset": "random",
+  "spec_decode": false,
+  "speculative_config": null,
+  "thinking": false,
+  "vllm_version": "0.27.1",
+  "engine": "$VLLM",
+  "model_served_name": "qwen38-nvfp4",
+  "model_path": "$MODEL",
+  "port": 8040,
+  "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "vram_used_mib_after_first_ready": 80538,
+  "vram_used_mib_after_relaunch": 81822,
+  "vram_used_mib_after_matrix": 83892,
+  "vram_total_mib": 97887,
+  "power_draw_w_idle_after_load": 16.52,
+  "power_draw_w_after_matrix": 17.84,
+  "compute_name": "VLLM::EngineCore",
+  "language_model_only": true,
+  "quantization_autodetect": "compressed-tensors",
+  "attention_backend": "flash_attn",
+  "kv_cache_dtype": "bfloat16",
+  "kv_cache_dtype_reason": "checkpoint quantization_config.kv_cache_scheme is 8-bit float; flash_attn on SM120 rejects FP8 KV",
+  "serve_attempts": [
+    {
+      "n": 1,
+      "result": "fail",
+      "note": "contract argv as written. flash_attn rejected checkpoint FP8 kv_cache_scheme on SM120: ValueError kv_cache_dtype not supported; FP8 KV cache requires FA3 on SM90 or FA4 on SM100. language-model-only succeeded (text-only mode). quantization auto-detect succeeded (compressed-tensors). speculative_config=None."
+    },
+    {
+      "n": 2,
+      "result": "ok_then_tool_timeout",
+      "delta": "added --kv-cache-dtype bfloat16 so contract flash_attn is valid on SM120",
+      "application_startup_complete": true,
+      "note": "bash tool default 300s deadline SIGTERM'd the scope after ready. GPU drained cleanly (5 MiB, 0% util)."
+    },
+    {
+      "n": 3,
+      "result": "ok",
+      "delta": "same argv as attempt 2, launched with no tool deadline",
+      "application_startup_complete": true
+    }
+  ],
+  "serve_argv": [
+    "$VLLM",
+    "serve",
+    "$MODEL",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8040",
+    "--dtype",
+    "bfloat16",
+    "--trust-remote-code",
+    "--language-model-only",
+    "--max-model-len",
+    "8192",
+    "--max-num-seqs",
+    "8",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--mamba-cache-dtype",
+    "float32",
+    "--mamba-ssm-cache-dtype",
+    "float32",
+    "--attention-backend",
+    "flash_attn",
+    "--kv-cache-dtype",
+    "bfloat16",
+    "--served-model-name",
+    "qwen38-nvfp4",
+    "--chat-template",
+    "$MODEL/chat_template.jinja",
+    "--default-chat-template-kwargs",
+    "{\"enable_thinking\": false}"
+  ],
+  "bench_extra_official_flags": {
+    "tokenizer": "$MODEL",
+    "trust_remote_code": true,
+    "reason": "vllm bench serve --model qwen38-nvfp4 tried to download tokenizer from huggingface.co/qwen38-nvfp4 (404). --tokenizer is a real 0.27.1 flag."
+  },
+  "flags_checked": {
+    "max_concurrency": "--max-concurrency",
+    "save_result": "--save-result",
+    "result_dir": "--result-dir",
+    "result_filename": "--result-filename",
+    "tokenizer": "--tokenizer",
+    "source": "vllm bench serve --help=all (0.27.1)"
+  }
+}

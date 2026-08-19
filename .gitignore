@@ -1,0 +1,15 @@
+# local serve / bench output
+serve*.log
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv/
+venv/
+out/
+
+# weights (download with hf download)
+*.safetensors
+*.pt
+*.gguf
+*.bin

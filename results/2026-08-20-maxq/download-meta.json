@@ -1,0 +1,9 @@
+{
+  "path": "$MODEL",
+  "bytes": 23444511832,
+  "hf_revision": "7d6f8d4d72f56b92b3cdbf22f156b90e1bab0108",
+  "repo": "unsloth/Qwen3.8-27B-NVFP4",
+  "file_count": 13,
+  "model.safetensors": 22568192096,
+  "model_mtp.safetensors": 849400392
+}

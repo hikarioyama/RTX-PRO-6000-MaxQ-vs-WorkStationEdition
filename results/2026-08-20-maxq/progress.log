@@ -1,0 +1,85 @@
+01:04:47 CELL random-in1024-out128-c1 warmup+ n=3 timed num_prompts=16
+01:04:47 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 1 --num-prompts 1
+01:04:58 exit=1 wall_s=11.1 file=None
+01:04:58 WARMUP_FAIL random-in1024-out128-c1 rc=1
+01:07:18 CELL random-in1024-out128-c1 warmup+ n=3 timed num_prompts=16
+01:07:18 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 1 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:07:26 exit=0 wall_s=7.8 file=None
+01:07:26 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c1-run1.json
+01:08:06 exit=0 wall_s=40.0 file=random-in1024-out128-c1-run1.json
+01:08:06 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c1-run2.json
+01:08:46 exit=0 wall_s=40.2 file=random-in1024-out128-c1-run2.json
+01:08:46 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c1-run3.json
+01:09:26 exit=0 wall_s=40.3 file=random-in1024-out128-c1-run3.json
+01:09:26 CELL_DONE random-in1024-out128-c1 median_output_throughput=59.425754562383986 median_ttft_ms=112.646104011219 spec_absent=True
+01:09:26 CELL random-in1024-out128-c2 warmup+ n=3 timed num_prompts=16
+01:09:26 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 2 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:09:34 exit=0 wall_s=7.8 file=None
+01:09:34 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c2-run1.json
+01:09:59 exit=0 wall_s=25.4 file=random-in1024-out128-c2-run1.json
+01:09:59 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c2-run2.json
+01:10:24 exit=0 wall_s=25.3 file=random-in1024-out128-c2-run2.json
+01:10:24 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c2-run3.json
+01:10:50 exit=0 wall_s=25.1 file=random-in1024-out128-c2-run3.json
+01:10:50 CELL_DONE random-in1024-out128-c2 median_output_throughput=105.12832097271038 median_ttft_ms=196.36071149579948 spec_absent=True
+01:10:50 CELL random-in1024-out128-c4 warmup+ n=3 timed num_prompts=16
+01:10:50 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 4 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:10:57 exit=0 wall_s=7.8 file=None
+01:10:57 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c4-run1.json
+01:11:14 exit=0 wall_s=16.6 file=random-in1024-out128-c4-run1.json
+01:11:14 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c4-run2.json
+01:11:30 exit=0 wall_s=16.4 file=random-in1024-out128-c4-run2.json
+01:11:30 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c4-run3.json
+01:11:47 exit=0 wall_s=16.5 file=random-in1024-out128-c4-run3.json
+01:11:47 CELL_DONE random-in1024-out128-c4 median_output_throughput=189.0411023538379 median_ttft_ms=434.91640700085554 spec_absent=True
+01:11:47 CELL random-in1024-out128-c8 warmup+ n=3 timed num_prompts=32
+01:11:47 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 8 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:11:55 exit=0 wall_s=7.8 file=None
+01:11:55 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c8-run1.json
+01:12:13 exit=0 wall_s=18.5 file=random-in1024-out128-c8-run1.json
+01:12:13 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c8-run2.json
+01:12:31 exit=0 wall_s=18.3 file=random-in1024-out128-c8-run2.json
+01:12:31 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 1024 --output-len 128 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in1024-out128-c8-run3.json
+01:12:50 exit=0 wall_s=18.4 file=random-in1024-out128-c8-run3.json
+01:12:50 CELL_DONE random-in1024-out128-c8 median_output_throughput=324.4845881257966 median_ttft_ms=910.7946660005837 spec_absent=True
+01:12:50 CELL random-in256-out1024-c1 warmup+ n=3 timed num_prompts=16
+01:12:50 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 1 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:13:12 exit=0 wall_s=22.2 file=None
+01:13:12 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c1-run1.json
+01:17:43 exit=0 wall_s=271.2 file=random-in256-out1024-c1-run1.json
+01:17:43 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c1-run2.json
+01:22:15 exit=0 wall_s=271.4 file=random-in256-out1024-c1-run2.json
+01:22:15 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 1 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c1-run3.json
+01:26:46 exit=0 wall_s=271.3 file=random-in256-out1024-c1-run3.json
+01:26:46 CELL_DONE random-in256-out1024-c1 median_output_throughput=61.63880174172748 median_ttft_ms=55.46959350613179 spec_absent=True
+01:26:46 CELL random-in256-out1024-c2 warmup+ n=3 timed num_prompts=16
+01:26:46 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 2 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:27:08 exit=0 wall_s=22.2 file=None
+01:27:08 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c2-run1.json
+01:29:38 exit=0 wall_s=149.3 file=random-in256-out1024-c2-run1.json
+01:29:38 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c2-run2.json
+01:32:07 exit=0 wall_s=149.2 file=random-in256-out1024-c2-run2.json
+01:32:07 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 2 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c2-run3.json
+01:34:36 exit=0 wall_s=149.4 file=random-in256-out1024-c2-run3.json
+01:34:36 CELL_DONE random-in256-out1024-c2 median_output_throughput=114.10395355812885 median_ttft_ms=107.90005100716371 spec_absent=True
+01:34:36 CELL random-in256-out1024-c4 warmup+ n=3 timed num_prompts=16
+01:34:36 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 4 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:34:58 exit=0 wall_s=22.2 file=None
+01:34:58 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c4-run1.json
+01:36:18 exit=0 wall_s=79.4 file=random-in256-out1024-c4-run1.json
+01:36:18 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c4-run2.json
+01:37:37 exit=0 wall_s=79.5 file=random-in256-out1024-c4-run2.json
+01:37:37 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 4 --num-prompts 16 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c4-run3.json
+01:38:57 exit=0 wall_s=79.4 file=random-in256-out1024-c4-run3.json
+01:38:57 CELL_DONE random-in256-out1024-c4 median_output_throughput=222.2840312052935 median_ttft_ms=142.30465799482772 spec_absent=True
+01:38:57 CELL random-in256-out1024-c8 warmup+ n=3 timed num_prompts=32
+01:38:57 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 8 --num-prompts 1 --tokenizer $MODEL --trust-remote-code
+01:39:19 exit=0 wall_s=22.4 file=None
+01:39:19 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c8-run1.json
+01:40:38 exit=0 wall_s=79.1 file=random-in256-out1024-c8-run1.json
+01:40:38 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c8-run2.json
+01:41:57 exit=0 wall_s=79.1 file=random-in256-out1024-c8-run2.json
+01:41:57 RUN $VLLM bench serve --backend openai --base-url http://127.0.0.1:8040 --model qwen38-nvfp4 --dataset-name random --seed 0 --temperature 0 --request-rate inf --ignore-eos --input-len 256 --output-len 1024 --max-concurrency 8 --num-prompts 32 --tokenizer $MODEL --trust-remote-code --save-result --result-dir $RESULT_DIR --result-filename random-in256-out1024-c8-run3.json
+01:43:16 exit=0 wall_s=79.1 file=random-in256-out1024-c8-run3.json
+01:43:16 CELL_DONE random-in256-out1024-c8 median_output_throughput=445.7237887230083 median_ttft_ms=247.84874099714216 spec_absent=True
+01:43:16 WROTE $RESULT_DIR/summary.json
