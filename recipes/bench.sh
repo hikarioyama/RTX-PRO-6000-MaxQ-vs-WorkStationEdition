@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Official vllm bench serve matrix used for the numbers in this repo.
+# Official vllm bench serve matrix for the Max-Q vs WS SKU comparison in this repo.
 # Warmup num_prompts=1 is discarded. Timed n=3, num_prompts=max(16, 4*C).
 # --tokenizer $MODEL --trust-remote-code is required (served alias is not an HF id).
 set -euo pipefail

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Serve Unsloth Qwen3.8-27B-NVFP4 on vLLM 0.27.1 / SM120.
-# Required: --kv-cache-dtype bfloat16 (checkpoint FP8 KV + flash_attn fails on SM120).
-# Thinking off. No --speculative-config.
+# Serve the Unsloth Qwen3.8-27B-NVFP4 workload for Max-Q vs WS SKU comparison.
+# vLLM 0.27.1 / SM120. Required: --kv-cache-dtype bfloat16 (checkpoint FP8 KV + flash_attn fails on SM120).
+# Thinking off. No --speculative-config (AR only; accept noise would hide SKU deltas).
 set -euo pipefail
 
 : "${MODEL:?set MODEL to the local Unsloth checkpoint directory}"

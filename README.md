@@ -1,8 +1,14 @@
-# Qwen3.8-27B NVFP4 (Unsloth) — vLLM 0.27.1 bench
+# RTX PRO 6000 Blackwell Max-Q vs Workstation Edition
 
-`unsloth/Qwen3.8-27B-NVFP4` を **vLLM 0.27.1 / SM120** で serve したときの、公式クライアント `vllm bench serve` の測定記録です。同じ重み・同じ行列を **RTX PRO 6000 Blackwell Max-Q** と **Workstation Edition** の 2 SKU で取りました。
+このリポジトリは、**同じ checkpoint・同じ software・投機デコードなし（no speculative decoding）** で **RTX PRO 6000 Blackwell Max-Q** と **Workstation Edition** を比較した記録です。
+
+ワークロードは `unsloth/Qwen3.8-27B-NVFP4` を **vLLM 0.27.1 / SM120** で serve し、公式クライアント `vllm bench serve` で測ったものです。モデルの tok/s を出すことが目的ではありません。
 
 **この重みは Unsloth です。NVIDIA 公式の 3.8 NVFP4 ではありません。** 測定時点で NVIDIA 公式の Qwen3.8 NVFP4 は未公開です。revision は `7d6f8d4d72f56b92b3cdbf22f156b90e1bab0108` に固定しています。
+
+## なぜ speculative decoding を切るか
+
+speculative decoding の accept は prompt と sampling / 確率で揺れる。SKU 差（帯域 vs 計算、300W vs 600W）を見るにはその項をゼロに固定した。AR（投機なし）だけが同じ重みを同じ回数読む比較になる。
 
 ## Headline（n=3, same-condition）
 

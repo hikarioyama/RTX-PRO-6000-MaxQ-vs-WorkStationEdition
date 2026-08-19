@@ -1,6 +1,10 @@
 # Max-Q vs Workstation Edition
 
+このリポジトリは、**同じ checkpoint・同じ software・投機デコードなし（no speculative decoding）** で **RTX PRO 6000 Blackwell Max-Q** と **Workstation Edition** を比較した記録です。
+
 Same weights (`unsloth/Qwen3.8-27B-NVFP4` revision `7d6f8d4d72f56b92b3cdbf22f156b90e1bab0108`), same vLLM 0.27.1 flags, same official client matrix. Spec off. Thinking off. `--kv-cache-dtype bfloat16`.
+
+SKU の話は C=1 decode 差（~+6%）対 long-prefill の TTFT 差（~0.73× TTFT / derived prefill ~+38%）である。モデルのスコアではない。
 
 All official cells: n=3 median, same-condition, warmup `num_prompts=1` discarded, timed `num_prompts=max(16, 4*C)`, failed=0.
 
