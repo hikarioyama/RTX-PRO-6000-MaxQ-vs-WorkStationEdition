@@ -1,4 +1,4 @@
-# RTX PRO 6000 Blackwell Max-Q vs Workstation Edition
+# MaxQ-vs-WorkStationEdition
 
 Same-checkpoint, same-software, no-speculative-decoding comparison of **RTX PRO 6000 Blackwell Max-Q** vs **Workstation Edition**.
 
