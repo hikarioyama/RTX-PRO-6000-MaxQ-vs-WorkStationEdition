@@ -1,4 +1,4 @@
-# MaxQ-vs-WorkStationEdition
+# RTX PRO 6000-MaxQ-vs-WorkStationEdition
 
 Same-checkpoint, same-software, no-speculative-decoding comparison of **RTX PRO 6000 Blackwell Max-Q** vs **Workstation Edition**.
 
@@ -21,6 +21,18 @@ Official `vllm bench serve` random, seed 0, temperature 0, request-rate inf, ign
 | output tok/s (in=1024, out=128, C=1) | 59.43 | 63.50 | 1.069 |
 | TTFT ms (same cell) | 112.6 | 81.7 | 0.73 |
 | derived prefill tok/s (in=1024, C=1) | 9089 | 12533 | 1.38 |
+
+![Output tok/s vs concurrency](docs/figures/fig01-output-toks.png)
+
+![WS / Max-Q output tok/s ratio vs concurrency](docs/figures/fig03-ws-maxq-ratio.png)
+
+## Prefill / latency
+
+![TTFT (ms) vs concurrency](docs/figures/fig02-ttft.png)
+
+![Derived prefill tok/s vs concurrency](docs/figures/fig04-derived-prefill.png)
+
+C=1 is the clean proxy; C>1 includes queueing.
 
 `derived prefill` is `input_len / (median_ttft_s)`. TTFT includes the first decode token, so this is **derived, not a kernel measurement**. C>1 mixes queueing; see [`results/COMPARE.md`](results/COMPARE.md).
 
